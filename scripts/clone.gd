@@ -3,18 +3,24 @@ extends CharacterBody2D
 # Clone variables
 var speed = 100.0  # Speed at which the clones follow the player
 var avoid_distance = 10.0  # Distance at which clones should avoid the player
+var frame_skip: int = 15  # Skip processing every 15 frames
 
 @onready var player: Node2D = null  # Reference to the player
+var frame_counter: int = 0  # Counter to track frames
 
 func _process(delta):
-	# Recalculate the player's position each frame
-	if player == null:
-		# Find the player if not already assigned
-		player = get_tree().get_nodes_in_group("Player")[0]
+	# Increment the frame counter
+	frame_counter += 1
 
-	if player != null:
-		if(!avoid_player_if_too_close()):
-			follow_player()
+	# Only calculate every 15 frames
+	if frame_counter % frame_skip == 0:
+		if player == null:
+			# Find the player if not already assigned
+			player = get_tree().get_nodes_in_group("Player")[0]
+
+		if player != null:
+			if not avoid_player_if_too_close():
+				follow_player()
 
 	# Move the clone using move_and_slide()
 	move_and_slide()

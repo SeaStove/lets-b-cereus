@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bahsu0qaxjvjf"]
+
+[ext_resource type="Script" path="res://scripts/killzone.gd" id="1_hblyo"]
+
+[node name="killzone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_hblyo")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
