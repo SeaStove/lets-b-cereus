@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr27a4bpblsy3"]
+[gd_scene load_steps=9 format=3 uid="uid://cr27a4bpblsy3"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_8fkwu"]
 [ext_resource type="Texture2D" uid="uid://crr2jr7ettoey" path="res://assets/SpearFishing Assets Pack/Sprites/Tiles - 16x16/Sand.png" id="1_np7k5"]
 [ext_resource type="Texture2D" uid="uid://d03t2khmof1f2" path="res://assets/SpearFishing Assets Pack/Sprites/Tiles - 16x16/Abyss.png" id="2_43uoy"]
 [ext_resource type="PackedScene" uid="uid://dt476q0scbvtl" path="res://scenes/player.tscn" id="3_sfws0"]
@@ -246,6 +247,10 @@ sources/0 = SubResource("TileSetAtlasSource_q6mtj")
 sources/1 = SubResource("TileSetAtlasSource_aha4t")
 
 [node name="game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="." groups=["GameManager"]]
+unique_name_in_owner = true
+script = ExtResource("1_8fkwu")
 
 [node name="TileMap" type="TileMap" parent="."]
 unique_name_in_owner = true

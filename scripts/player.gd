@@ -6,10 +6,12 @@ var rotation_speed = 5.0  # Speed at which the bacteria rotates while tumbling
 var moving_direction = Vector2.RIGHT  # Direction in which the bacteria will move
 var deceleration = 50.0  # How quickly the bacteria slows down
 var gravity = 170.0  # Gravity to apply when out of the soup
+var growth_factor: float = 0.05  # Adjust this to control how much the player grows each time
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera: Camera2D = %Camera2D  # Reference to Camera2D node
 @onready var tilemap: TileMap = %TileMap  # Reference to the TileMap for soup boundary
+@onready var game_manager = get_tree().get_nodes_in_group("GameManager")[0]
 
 # State variables
 var is_tumbling = false
@@ -71,3 +73,8 @@ func is_in_soup_area() -> bool:
 	if tile_id == 0:  # Assuming tile 0 represents soup
 		return true  # Inside the soup area
 	return false  # Outside the soup area
+	
+func grow():
+	# Increase the player's scale slightly
+	scale += Vector2(growth_factor, growth_factor)
+	print("Player grew! Current scale: ", scale)
