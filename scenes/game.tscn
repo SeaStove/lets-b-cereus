@@ -301,41 +301,45 @@ position = Vector2(-76, 96)
 [node name="nutrient7" parent="nutrients" instance=ExtResource("4_bspja")]
 position = Vector2(32, 191)
 
-[node name="killzone" parent="." instance=ExtResource("6_pm5it")]
+[node name="killzones" type="Node" parent="."]
+
+[node name="killzone" parent="killzones" instance=ExtResource("6_pm5it")]
 position = Vector2(-143, -81)
 rotation = 1.56284
+scale = Vector2(1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone"]
 shape = SubResource("WorldBoundaryShape2D_58utr")
 
-[node name="killzone3" parent="." instance=ExtResource("6_pm5it")]
+[node name="killzone3" parent="killzones" instance=ExtResource("6_pm5it")]
 position = Vector2(144, -71)
 rotation = -1.57076
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone3"]
 shape = SubResource("WorldBoundaryShape2D_58utr")
 
-[node name="killzone2" parent="." instance=ExtResource("6_pm5it")]
+[node name="killzone2" parent="killzones" instance=ExtResource("6_pm5it")]
 position = Vector2(-3.99998, 317)
 rotation = -0.001602
+scale = Vector2(1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone2"]
 shape = SubResource("WorldBoundaryShape2D_58utr")
 
-[node name="killzone4" parent="." instance=ExtResource("6_pm5it")]
+[node name="killzone4" parent="killzones" instance=ExtResource("6_pm5it")]
 position = Vector2(134, 122)
 rotation = -1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone4"]
 position = Vector2(-1.81198e-05, -6.10352e-05)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_72je3")
 
-[node name="killzone5" parent="." instance=ExtResource("6_pm5it")]
+[node name="killzone5" parent="killzones" instance=ExtResource("6_pm5it")]
 position = Vector2(-149, 120)
 rotation = -1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone5"]
 position = Vector2(-1.81198e-05, -6.10352e-05)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_72je3")

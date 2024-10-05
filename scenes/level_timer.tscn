@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://r0m5dmf3qsoa"]
 
 [node name="LevelTimer" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
