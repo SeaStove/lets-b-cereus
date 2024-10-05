@@ -31,12 +31,12 @@ func _process(delta):
 			# Set the forward direction based on the current rotation
 			moving_direction = Vector2.UP.rotated(rotation)
 			velocity = moving_direction * speed
-		else:
-			# Slow down by reducing velocity over time until it reaches zero
-			if velocity.length() > 0:
-				velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
-				if not animated_sprite_2d.is_playing():
-					animated_sprite_2d.play("idle")
+	
+	# Keep decelerating while tumbling
+	if velocity.length() > 0:
+		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
+		if not animated_sprite_2d.is_playing() and not is_tumbling:
+			animated_sprite_2d.play("idle")
 
 	# Apply gravity if the bacteria is out of the soup
 	if not is_in_soup:
