@@ -247,11 +247,10 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_q6mtj")
 sources/1 = SubResource("TileSetAtlasSource_aha4t")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wk6if"]
-distance = 1.0
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58utr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ascsj"]
-size = Vector2(355, 47)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72je3"]
+size = Vector2(403.887, 70.6471)
 
 [node name="game" type="Node2D"]
 
@@ -302,43 +301,41 @@ position = Vector2(-76, 96)
 [node name="nutrient7" parent="nutrients" instance=ExtResource("4_bspja")]
 position = Vector2(32, 191)
 
-[node name="killzones" type="Node" parent="."]
+[node name="killzone" parent="." instance=ExtResource("6_pm5it")]
+position = Vector2(-143, -81)
+rotation = 1.56284
 
-[node name="killzone" parent="killzones" instance=ExtResource("6_pm5it")]
-position = Vector2(-1, 301)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape2D_58utr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone"]
-shape = SubResource("WorldBoundaryShape2D_wk6if")
+[node name="killzone3" parent="." instance=ExtResource("6_pm5it")]
+position = Vector2(144, -71)
+rotation = -1.57076
 
-[node name="killzone2" parent="killzones" instance=ExtResource("6_pm5it")]
-position = Vector2(157, -17)
-rotation = 4.71239
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone3"]
+shape = SubResource("WorldBoundaryShape2D_58utr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone2"]
-shape = SubResource("WorldBoundaryShape2D_wk6if")
+[node name="killzone2" parent="." instance=ExtResource("6_pm5it")]
+position = Vector2(-3.99998, 317)
+rotation = -0.001602
 
-[node name="killzone3" parent="killzones" instance=ExtResource("6_pm5it")]
-position = Vector2(-162, -15)
-rotation = 1.5708
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
+shape = SubResource("WorldBoundaryShape2D_58utr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone3"]
-shape = SubResource("WorldBoundaryShape2D_wk6if")
+[node name="killzone4" parent="." instance=ExtResource("6_pm5it")]
+position = Vector2(134, 122)
+rotation = -1.5708
 
-[node name="killzone4" parent="killzones" instance=ExtResource("6_pm5it")]
-position = Vector2(-162, -15)
-rotation = 1.5708
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone4"]
+position = Vector2(-1.81198e-05, -6.10352e-05)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_72je3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone4"]
-position = Vector2(125.5, -25.5)
-shape = SubResource("RectangleShape2D_ascsj")
+[node name="killzone5" parent="." instance=ExtResource("6_pm5it")]
+position = Vector2(-149, 120)
+rotation = -1.5708
 
-[node name="killzone5" parent="killzones" instance=ExtResource("6_pm5it")]
-position = Vector2(94, -16)
-rotation = 1.5708
-scale = Vector2(1.01009, 1.2186)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone5"]
-position = Vector2(125.5, -25.5)
-shape = SubResource("RectangleShape2D_ascsj")
-
-[connection signal="body_entered" from="killzones/killzone" to="killzones/killzone" method="_on_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone5"]
+position = Vector2(-1.81198e-05, -6.10352e-05)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_72je3")

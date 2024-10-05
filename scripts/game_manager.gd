@@ -19,6 +19,10 @@ func _ready():
 		player.tilemap = tilemap
 
 func _process(delta):
+	if Input.is_action_pressed("reset"):
+		get_tree().reload_current_scene()
+
+	
 	# Timer to spawn nutrients at intervals
 	spawn_timer += delta
 	if spawn_timer >= spawn_interval:
