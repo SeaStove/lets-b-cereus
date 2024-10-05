@@ -21,7 +21,6 @@ func _process(delta):
 # Function to add one to the total nutrients and make the player grow
 func add_nutrient():
 	total_nutrients += 1
-	print("Nutrients collected: ", total_nutrients)
 	
 	# Find the player node and increase its size
 	if player:
@@ -52,5 +51,3 @@ func spawn_nutrient():
 		var nutrient = nutrient_scene.instantiate()
 		nutrient.position = world_position
 		add_child(nutrient)
-
-		print("Nutrient spawned at: ", random_tile)
