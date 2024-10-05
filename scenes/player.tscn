@@ -1,0 +1,148 @@
+[gd_scene load_steps=21 format=3 uid="uid://dt476q0scbvtl"]
+
+[ext_resource type="Texture2D" uid="uid://cvlt23kquhp6l" path="res://assets/Green Jellyfish Sprite Sheet.png" id="1_00y7x"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_tvjrc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew41r"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emugt"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1qbk"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qawc"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oew3g"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdjoi"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvimn"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayv47"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqg8m"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7u6l"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv5xo"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axti3"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avc0o"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sebm2"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a46ls"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v56ko"]
+atlas = ExtResource("1_00y7x")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ejpsu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew41r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emugt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1qbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qawc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oew3g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdjoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvimn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayv47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqg8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7u6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv5xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axti3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avc0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sebm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a46ls")
+}],
+"loop": false,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v56ko")
+}],
+"loop": true,
+"name": &"tumble",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_swcql"]
+radius = 4.12311
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_tvjrc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ejpsu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_swcql")
