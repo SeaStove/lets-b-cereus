@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cr27a4bpblsy3"]
+[gd_scene load_steps=13 format=3 uid="uid://cr27a4bpblsy3"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_8fkwu"]
 [ext_resource type="Texture2D" uid="uid://crr2jr7ettoey" path="res://assets/SpearFishing Assets Pack/Sprites/Tiles - 16x16/Sand.png" id="1_np7k5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dt476q0scbvtl" path="res://scenes/player.tscn" id="3_sfws0"]
 [ext_resource type="PackedScene" uid="uid://betybtqesidfm" path="res://scenes/nutrient.tscn" id="4_bspja"]
 [ext_resource type="PackedScene" uid="uid://bahsu0qaxjvjf" path="res://scenes/killzone.tscn" id="6_pm5it"]
+[ext_resource type="PackedScene" uid="uid://r0m5dmf3qsoa" path="res://scenes/level_timer.tscn" id="7_gdqkb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6mtj"]
 texture = ExtResource("1_np7k5")
@@ -306,7 +307,6 @@ position = Vector2(32, 191)
 [node name="killzone" parent="killzones" instance=ExtResource("6_pm5it")]
 position = Vector2(-143, -81)
 rotation = 1.56284
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone"]
 shape = SubResource("WorldBoundaryShape2D_58utr")
@@ -321,7 +321,6 @@ shape = SubResource("WorldBoundaryShape2D_58utr")
 [node name="killzone2" parent="killzones" instance=ExtResource("6_pm5it")]
 position = Vector2(-3.99998, 317)
 rotation = -0.001602
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone2"]
 shape = SubResource("WorldBoundaryShape2D_58utr")
@@ -332,7 +331,6 @@ rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone4"]
 position = Vector2(-1.81198e-05, -6.10352e-05)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_72je3")
 
 [node name="killzone5" parent="killzones" instance=ExtResource("6_pm5it")]
@@ -341,5 +339,6 @@ rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/killzone5"]
 position = Vector2(-1.81198e-05, -6.10352e-05)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_72je3")
+
+[node name="LevelTimer" parent="." instance=ExtResource("7_gdqkb")]

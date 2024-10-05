@@ -1,13 +1,42 @@
-[gd_scene format=3 uid="uid://r0m5dmf3qsoa"]
+[gd_scene load_steps=3 format=3 uid="uid://r0m5dmf3qsoa"]
+
+[ext_resource type="FontFile" uid="uid://cvd5eik6mplet" path="res://assets/fonts/PixelOperator8.ttf" id="1_p7svh"]
+[ext_resource type="Script" path="res://scripts/level_timer.gd" id="1_yds0n"]
 
 [node name="LevelTimer" type="Node2D"]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
+script = ExtResource("1_yds0n")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.065
+anchor_bottom = 0.081
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 1.12
+offset_bottom = 0.512001
+theme_override_fonts/font = ExtResource("1_p7svh")
+theme_override_font_sizes/font_size = 32
+text = "60"
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 198.0
+offset_top = 286.0
+offset_right = -159.0
+offset_bottom = -242.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_p7svh")
+theme_override_font_sizes/font_size = 120
+text = "You Won!"
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
