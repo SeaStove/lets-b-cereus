@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dt476q0scbvtl" path="res://scenes/player.tscn" id="3_sfws0"]
 [ext_resource type="PackedScene" uid="uid://betybtqesidfm" path="res://scenes/nutrient.tscn" id="4_bspja"]
 [ext_resource type="PackedScene" uid="uid://bahsu0qaxjvjf" path="res://scenes/killzone.tscn" id="6_pm5it"]
-[ext_resource type="PackedScene" path="res://scenes/level_timer.tscn" id="7_6b308"]
+[ext_resource type="PackedScene" uid="uid://r0m5dmf3qsoa" path="res://scenes/ui.tscn" id="7_6b308"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6mtj"]
 texture = ExtResource("1_np7k5")
@@ -342,4 +342,4 @@ scale = Vector2(1.01009, 1.2186)
 position = Vector2(125.5, -25.5)
 shape = SubResource("RectangleShape2D_ascsj")
 
-[node name="LevelTimer" parent="." instance=ExtResource("7_6b308")]
+[node name="ui" parent="." instance=ExtResource("7_6b308")]

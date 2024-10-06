@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://4wnvan1dekqm"]
+[gd_scene load_steps=5 format=3 uid="uid://dqgdwex04eouh"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_x8eca"]
 [ext_resource type="Theme" uid="uid://pcfceg58h0sc" path="res://assets/themes/ButtonTheme.tres" id="2_blvfj"]
@@ -54,6 +54,16 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rtpjd")
 theme_override_font_sizes/font_size = 20
 text = "Ludum Dare 56"
+horizontal_alignment = 1
+
+[node name="SubLabel" type="Label" parent="MarginContainer/VBoxContainer3/TitleContainer/SubLabel"]
+offset_left = 336.0
+offset_top = 50.0
+offset_right = 849.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("3_rtpjd")
+theme_override_font_sizes/font_size = 20
+text = "Christian Stovall and Chase Allen"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer3"]
