@@ -65,14 +65,14 @@ layout_mode = 2
 theme_override_constants/separation = 26
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer3/HBoxContainer/ButtonContainer"]
-custom_minimum_size = Vector2(120, 40)
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme = ExtResource("2_blvfj")
 text = "Play
 "
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer3/HBoxContainer/ButtonContainer"]
-custom_minimum_size = Vector2(120, 40)
+custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
 theme = ExtResource("2_blvfj")
 text = "Quit
