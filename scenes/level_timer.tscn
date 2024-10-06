@@ -29,14 +29,18 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 198.0
-offset_top = 286.0
-offset_right = -159.0
-offset_bottom = -242.0
+offset_left = 148.0
+offset_top = 171.0
+offset_right = -120.0
+offset_bottom = -201.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_p7svh")
-theme_override_font_sizes/font_size = 120
-text = "You Won!"
+theme_override_font_sizes/font_size = 74
+text = "Soups On!
+You Replicated X Times"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

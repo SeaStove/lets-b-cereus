@@ -5,6 +5,7 @@ var total_time = 60  # Total time in seconds for the level timer
 var remaining_time = total_time  
 @onready var timer_label: Label = $"../CanvasLayer/TimerLabel"
 @onready var game_over_label: Label = $"../CanvasLayer/GameOverLabel"
+@onready var game_manager = get_tree().get_nodes_in_group("GameManager")[0]
 
 
 # Called when the node is ready
@@ -30,5 +31,5 @@ func update_timer_display():
 func end_game():
 	stop()  # Stop the timer
 	timer_label.hide()  # Hide the timer label
-	game_over_label.text = "You Win!"  # Set the text to "You Win"
+	game_over_label.text = "Soups On!\nYou Replicated " + str(game_manager.get_total_clones()) + " times."    # Set the text to "You Win"
 	game_over_label.show()  # Show the You Win label

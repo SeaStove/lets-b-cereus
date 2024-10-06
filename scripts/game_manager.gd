@@ -11,6 +11,7 @@ var total_nutrients: int = 0  # Start with 0 nutrients
 
 # Internal timer to spawn nutrients
 var spawn_timer: float = 0.0
+var clones = []  # List to keep track of clones
 
 func _ready():
 	# Assign the camera and tilemap to the player dynamically
@@ -22,7 +23,6 @@ func _process(delta):
 	if Input.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
 
-	
 	# Timer to spawn nutrients at intervals
 	spawn_timer += delta
 	if spawn_timer >= spawn_interval:
@@ -49,12 +49,15 @@ func spawn_clones():
 		# Spawn a clone near the player
 		var clone = clone_scene.instantiate() as CharacterBody2D
 		clone.position = player.global_position + Vector2(randf() * 50 - 25, randf() * 50 - 25)  # Randomize position around the player
-		
+
 		# Assign the player reference to the clone so it can follow
 		clone.player = player
 
+		# Add the clone to the scene and track it
 		add_child(clone)
+		clones.append(clone)  # Track each clone in the clones array
 
+# Function to check if a new nutrient will overlap with an existing one
 func is_overlapping_nutrient(new_position: Vector2) -> bool:
 	for existing_nutrient in get_tree().get_nodes_in_group("Nutrient"):
 		if existing_nutrient.global_position.distance_to(new_position) < 16:  # Adjust the distance threshold as needed
@@ -84,8 +87,6 @@ func spawn_nutrient():
 		return
 
 	# Function to check if a new nutrient will overlap with an existing one
-
-
 	var nutrient_spawned = false
 	while not nutrient_spawned and possible_tiles.size() > 0:
 		# Choose a random tile
@@ -105,3 +106,11 @@ func spawn_nutrient():
 
 	if not nutrient_spawned:
 		print("Failed to spawn a nutrient without overlap.")
+
+# Function to return the current number of nutrients
+func get_nutrients():
+	return total_nutrients
+
+# Function to return the total number of clones
+func get_total_clones() -> int:
+	return clones.size()
