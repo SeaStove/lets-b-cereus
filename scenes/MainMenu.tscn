@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://4wnvan1dekqm"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_x8eca"]
+[ext_resource type="Theme" uid="uid://pcfceg58h0sc" path="res://assets/themes/ButtonTheme.tres" id="2_blvfj"]
+[ext_resource type="FontFile" uid="uid://c11e0wbvnmu87" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_ws4sr"]
+[ext_resource type="FontFile" uid="uid://cvd5eik6mplet" path="res://assets/fonts/PixelOperator8.ttf" id="3_rtpjd"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x8eca")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="TitleContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 36
+alignment = 1
+
+[node name="GameLabel" type="Label" parent="MarginContainer/VBoxContainer3/TitleContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ws4sr")
+theme_override_font_sizes/font_size = 64
+text = "You  Can't B Cereus"
+horizontal_alignment = 1
+
+[node name="SubLabel" type="Label" parent="MarginContainer/VBoxContainer3/TitleContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rtpjd")
+theme_override_font_sizes/font_size = 20
+text = "Ludum Dare 56"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer3/HBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme = ExtResource("2_blvfj")
+text = "Play
+"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer3/HBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme = ExtResource("2_blvfj")
+text = "Quit
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/HBoxContainer/ButtonContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/HBoxContainer/ButtonContainer/Quit" to="." method="_on_quit_pressed"]

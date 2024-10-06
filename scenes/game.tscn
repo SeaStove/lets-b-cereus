@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr27a4bpblsy3"]
+[gd_scene load_steps=15 format=3 uid="uid://cr27a4bpblsy3"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_8fkwu"]
 [ext_resource type="Texture2D" uid="uid://crr2jr7ettoey" path="res://assets/SpearFishing Assets Pack/Sprites/Tiles - 16x16/Sand.png" id="1_np7k5"]
 [ext_resource type="Texture2D" uid="uid://d03t2khmof1f2" path="res://assets/SpearFishing Assets Pack/Sprites/Tiles - 16x16/Abyss.png" id="2_43uoy"]
 [ext_resource type="PackedScene" uid="uid://dt476q0scbvtl" path="res://scenes/player.tscn" id="3_sfws0"]
+[ext_resource type="Texture2D" uid="uid://bp1mvq2jvaj2q" path="res://assets/SpearFishing Assets Pack/Sprites/UI/UI-Buttons.png" id="4_0q6o6"]
 [ext_resource type="PackedScene" uid="uid://betybtqesidfm" path="res://scenes/nutrient.tscn" id="4_bspja"]
 [ext_resource type="PackedScene" uid="uid://bahsu0qaxjvjf" path="res://scenes/killzone.tscn" id="6_pm5it"]
 [ext_resource type="PackedScene" uid="uid://r0m5dmf3qsoa" path="res://scenes/level_timer.tscn" id="7_gdqkb"]
@@ -241,12 +242,27 @@ texture = ExtResource("2_43uoy")
 1:12/0 = 0
 2:12/0 = 0
 3:12/0 = 0
+10:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bffo"]
+texture = ExtResource("4_0q6o6")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+2:0/size_in_atlas = Vector2i(3, 2)
+2:0/0 = 0
+5:0/size_in_atlas = Vector2i(2, 2)
+5:0/0 = 0
+7:0/size_in_atlas = Vector2i(3, 2)
+7:0/0 = 0
+10:0/size_in_atlas = Vector2i(2, 2)
+10:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_og5ov"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_q6mtj")
 sources/1 = SubResource("TileSetAtlasSource_aha4t")
+sources/3 = SubResource("TileSetAtlasSource_2bffo")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58utr"]
 
