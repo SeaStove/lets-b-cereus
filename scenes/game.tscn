@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr27a4bpblsy3"]
+[gd_scene load_steps=20 format=3 uid="uid://cr27a4bpblsy3"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_8fkwu"]
 [ext_resource type="Texture2D" uid="uid://crr2jr7ettoey" path="res://assets/SpearFishing Assets Pack/Sprites/Tiles - 16x16/Sand.png" id="1_np7k5"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://betybtqesidfm" path="res://scenes/nutrient.tscn" id="4_bspja"]
 [ext_resource type="PackedScene" uid="uid://bahsu0qaxjvjf" path="res://scenes/killzone.tscn" id="6_pm5it"]
 [ext_resource type="PackedScene" uid="uid://r0m5dmf3qsoa" path="res://scenes/ui.tscn" id="7_6b308"]
+[ext_resource type="Texture2D" uid="uid://bpsiif31nv0d5" path="res://assets/soup.png" id="8_gihdk"]
+[ext_resource type="Texture2D" uid="uid://dap2pta07rorj" path="res://assets/burner.png" id="9_fsqhi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6mtj"]
 texture = ExtResource("1_np7k5")
@@ -254,6 +256,42 @@ distance = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ascsj"]
 size = Vector2(355, 47)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mkyk"]
+atlas = ExtResource("8_gihdk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm5mh"]
+atlas = ExtResource("8_gihdk")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf533"]
+atlas = ExtResource("8_gihdk")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls2vm"]
+atlas = ExtResource("8_gihdk")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osm1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mkyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm5mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf533")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls2vm")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 1.0
+}]
+
 [node name="game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="." groups=["GameManager"]]
@@ -343,3 +381,16 @@ position = Vector2(125.5, -25.5)
 shape = SubResource("RectangleShape2D_ascsj")
 
 [node name="ui" parent="." instance=ExtResource("7_6b308")]
+
+[node name="Soup" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.50001, 71.5)
+scale = Vector2(2.08594, 3.71094)
+sprite_frames = SubResource("SpriteFrames_osm1t")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.0752006
+
+[node name="Burner" type="Sprite2D" parent="."]
+position = Vector2(-6, 175)
+scale = Vector2(2.50781, 2.50781)
+texture = ExtResource("9_fsqhi")

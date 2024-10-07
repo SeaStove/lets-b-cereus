@@ -46,7 +46,7 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ws4sr")
 theme_override_font_sizes/font_size = 64
-text = "You  Can't B Cereus"
+text = "Let's B Cereus"
 horizontal_alignment = 1
 
 [node name="SubLabel" type="Label" parent="MarginContainer/VBoxContainer3/TitleContainer"]
@@ -57,13 +57,22 @@ text = "Ludum Dare 56"
 horizontal_alignment = 1
 
 [node name="SubLabel" type="Label" parent="MarginContainer/VBoxContainer3/TitleContainer/SubLabel"]
-offset_left = 336.0
-offset_top = 50.0
-offset_right = 849.0
-offset_bottom = 71.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 2.31
+anchor_right = 0.495
+anchor_bottom = 2.31
+offset_left = -327.24
+offset_top = 2.49
+offset_right = 337.76
+offset_bottom = 47.49
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_rtpjd")
 theme_override_font_sizes/font_size = 20
-text = "Christian Stovall and Chase Allen"
+text = "Christian & Kristen Stovall 
+& Chase Allen"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer3"]

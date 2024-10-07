@@ -14,14 +14,14 @@ script = ExtResource("1_yds0n")
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_right = 0.065
-anchor_bottom = 0.081
-offset_left = 20.0
-offset_top = 21.0
-offset_right = 1.12
-offset_bottom = 0.512001
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 23.0
+offset_right = 42.0
+offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("1_p7svh")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "60"
 
 [node name="GameOverLabel" type="Label" parent="CanvasLayer"]
@@ -42,5 +42,32 @@ You Replicated X Times"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_top = 11.0
+offset_right = -18.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("1_p7svh")
+text = "Hold Space To \"Tumble\"
+Release Space To \"Run\"
+Press R to Restart"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.005
+anchor_right = 0.005
+offset_left = 0.24
+offset_top = 12.0
+offset_right = 393.24
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("1_p7svh")
+text = "Collect Nutrients
+The go to surface Replicate
+More nutrients = more bacteria"
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
